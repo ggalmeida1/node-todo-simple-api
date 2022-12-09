@@ -18,7 +18,7 @@ export const add = async (req: Request, res: Response) => {
         res.status(201).json({ item: newTodo })
     }
 
-    res.json({ message: 'Dados nao enviados'})
+    // res.json({ message: 'Dados nao enviados'})
 }
 
 export const update = async (req: Request, res: Response) => {
@@ -46,7 +46,7 @@ export const update = async (req: Request, res: Response) => {
         await todo.save()
         res.json({ item: todo})
     }
-    res.json({ error: 'Item not found' })
+    res.json({})
 }
 
 export const remove = async (req: Request, res: Response) => {
@@ -56,6 +56,6 @@ export const remove = async (req: Request, res: Response) => {
 
     if (todo) {
         await todo.destroy()
-        res.json({ 'Sucessfully removed'})
+        res.json({})
     }
 }
